@@ -311,3 +311,10 @@ function np() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
+
+# lets toss an image onto my server and pbcopy that bitch.
+function scpp() {
+    scp "$1" chrism@giggeo.com:~/i;
+    echo "http://giggeo.com/i/$1" | pbcopy;
+    echo "Copied to clipboard: http://giggeo.com/i/$1"
+}
